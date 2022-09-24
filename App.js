@@ -1,29 +1,58 @@
-import React, {useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import {CustomModule} from './CustomModule';
+import {CounterModule} from './CounterModule';
 
 const App = () => {
   const [deviceId, setDeviceId] = useState('');
+  const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    const fetchDeviceId = async () => {
-      const id = await CustomModule.getDeviceId();
-      setDeviceId(id);
-    };
+  const fetchDeviceId = async () => {
+    const id = await CustomModule.getDeviceId();
+    setDeviceId(id);
+  };
 
-    fetchDeviceId();
-  }, []);
+  const incrementCounter = () => {
+    CounterModule.increment(msg => setMessage(msg));
+  };
 
-  useEffect(() => {
-    CustomModule.showToast();
-  }, []);
+  const decrementCounter = async () => {
+    try {
+      const msg = await CounterModule.decrement();
+      setMessage(msg);
+    } catch (error) {
+      setMessage(error.message);
+    }
+  };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Hello World!</Text>
-      <Text>Device id: {deviceId}</Text>
+      <View style={styles.deviceIdContainer}>
+        <Text>{deviceId}</Text>
+        <Button title="Get Device Id" onPress={fetchDeviceId} />
+      </View>
+      <View style={styles.counterContainer}>
+        <Text>{message}</Text>
+        <Button title="Increment" onPress={incrementCounter} />
+        <Button title="Decrement" onPress={decrementCounter} />
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  deviceIdContainer: {
+    marginTop: 20,
+  },
+  counterContainer: {
+    marginTop: 20,
+  },
+});
 
 export default App;
