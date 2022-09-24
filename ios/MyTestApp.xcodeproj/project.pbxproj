@@ -14,6 +14,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-MyTestApp-MyTestAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-MyTestApp-MyTestAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A88D32B828DD9E1F00C60CAD /* CounterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88D32B728DD9E1F00C60CAD /* CounterModule.swift */; };
+		A88D32BA28DD9F4500C60CAD /* CounterModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A88D32B928DD9F4500C60CAD /* CounterModule.m */; };
+		A8A1E73228DDD05E003539E2 /* CustomModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A1E73128DDD05E003539E2 /* CustomModule.swift */; };
+		A8A1E73428DDD136003539E2 /* CustomModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A1E73328DDD136003539E2 /* CustomModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,11 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-MyTestApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyTestApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MyTestApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MyTestApp-MyTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTestApp-MyTestAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyTestApp-MyTestAppTests/Pods-MyTestApp-MyTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		A88D32B628DD9E1F00C60CAD /* MyTestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyTestApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		A88D32B728DD9E1F00C60CAD /* CounterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModule.swift; sourceTree = "<group>"; };
+		A88D32B928DD9F4500C60CAD /* CounterModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CounterModule.m; sourceTree = "<group>"; };
+		A8A1E73128DDD05E003539E2 /* CustomModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModule.swift; sourceTree = "<group>"; };
+		A8A1E73328DDD136003539E2 /* CustomModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomModule.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -92,6 +101,11 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				A88D32B728DD9E1F00C60CAD /* CounterModule.swift */,
+				A88D32B628DD9E1F00C60CAD /* MyTestApp-Bridging-Header.h */,
+				A88D32B928DD9F4500C60CAD /* CounterModule.m */,
+				A8A1E73128DDD05E003539E2 /* CustomModule.swift */,
+				A8A1E73328DDD136003539E2 /* CustomModule.m */,
 			);
 			name = MyTestApp;
 			sourceTree = "<group>";
@@ -207,7 +221,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -412,8 +426,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88D32BA28DD9F4500C60CAD /* CounterModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				A88D32B828DD9E1F00C60CAD /* CounterModule.swift in Sources */,
+				A8A1E73428DDD136003539E2 /* CustomModule.m in Sources */,
+				A8A1E73228DDD05E003539E2 /* CustomModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-MyTestApp-MyTestAppTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -459,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-MyTestApp-MyTestAppTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = MyTestAppTests/Info.plist;
@@ -499,6 +519,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MyTestApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "MyTestApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -524,6 +545,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MyTestApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "MyTestApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
