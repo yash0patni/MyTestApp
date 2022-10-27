@@ -1,11 +1,18 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import NativeModuleDemo from './src/NativeModuleDemo';
+import NativeModuleDemo from './src/screens/NativeModuleDemo';
+import {createStackNavigator} from '@react-navigation/stack';
+import HomeScreen from './src/screens/HomeScreen';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <NativeModuleDemo />
+      <Stack.Navigator>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="NativeModuleDemo" component={NativeModuleDemo} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

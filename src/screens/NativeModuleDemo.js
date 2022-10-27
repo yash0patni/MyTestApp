@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
-import {CustomModule} from './nativeModules/CustomModule';
-import {CounterModule} from './nativeModules/CounterModule';
+import {CustomModule} from '../nativeModules/CustomModule';
+import {CounterModule} from '../nativeModules/CounterModule';
 
 const NativeModuleDemo = () => {
   const [deviceId, setDeviceId] = useState('');
